@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+    width: 300px;
+}
+  
+ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0;
+}
+  
+.day-name {
+    background: green;
+    text-align: center;
+}
