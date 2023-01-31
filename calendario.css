@@ -1,16 +1,52 @@
-div {
-    text-align: center;
-    width: 300px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-  
-ol {
-    list-style: none;
+
+.calendario {
+    margin: 20px auto;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.titulo {
+    text-align: center;
+    margin: 32px;
+    color: black;
+}
+
+.calendario1 {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    padding: 0;
 }
-  
-.day-name {
+
+.dia {
+    list-style: none;
+    text-align: center;
+    padding: 5px 5px;
+    color: #444;
+}
+
+.nombredia {
     background: green;
+    font-weight: 700;
     text-align: center;
 }
+
+.primerdia {
+    grid-column-start: 5;
+}
+
+form {
+    margin: 20px auto;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+
+
+	
+

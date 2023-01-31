@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Calendario</title>
+<title>Proyecto</title>
 <link type="text/css" rel="stylesheet" href="./calendario.css">
+<meta charset="utf-8" />
 </head>
 <body>
-<div>
-  <h1>Diciembre</h1>
-  <ol>
-    <li class="day-name">Lu</li>
-    <li class="day-name">Mar</li>
-    <li class="day-name">Mie</li>
-    <li class="day-name">Jue</li>
-    <li class="day-name">Vie</li>
-    <li class="day-name">Sab</li>
-    <li class="day-name">Dom</li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li>
-    </ol>
+    <div class="calendario">
+        <h1 class="titulo">Enero 2023</h1>
+        <ol class="calendario1">
+            <ol class="nombredia">Lun</ol>
+            <ol class="nombredia">Mar</ol>
+            <ol class="nombredia">Mié</ol>
+            <ol class="nombredia">Jue</ol>
+            <ol class="nombredia">Vie</ol>
+            <ol class="nombredia">Sáb</ol>
+            <ol class="nombredia">Dom</ol>
+
+            <li class="dia primerdia">1</li>
+            <li class="dia">2</li>
+            <li class="dia">3</li>
+            <li class="dia">4</li>
+            <li class="dia">5</li>
+            <li class="dia">6</li>
+            <li class="dia">7</li>
+            <li class="dia">8</li>
+            <li class="dia">9</li>
+            <li class="dia">10</li>
+            <li class="dia">11</li>
+            <li class="dia">12</li>
+            <li class="dia">13</li>
+            <li class="dia">14</li>
+            <li class="dia">15</li>
+            <li class="dia">17</li>
+            <li class="dia">18</li>
+            <li class="dia">19</li>
+            <li class="dia">20</li>
+            <li class="dia">21</li>
+            <li class="dia">22</li>
+            <li class="dia">23</li>
+            <li class="dia">24</li>
+            <li class="dia">25</li>
+            <li class="dia">26</li>
+            <li class="dia">27</li>
+            <li class="dia">28</li>
+            <li class="dia">29</li>
+            <li class="dia">30</li>
+            <li class="dia">31</li>
+        </ol>
     </div>
+
+    <form>
+        <label for="Lunes">Lunes: </label>
+        <input type="time" id="Lunes" name="Lunes">
+        <br>
+        <br>
+        <label for="Martes">Martes: </label>
+        <input type="time" id="Martes" name="Martes">
+        <br>
+        <br>
+        <label for="Miércoles">Miércoles: </label>
+        <input type="time" id="Miércoles" name="Miércoles">
+        <br>
+        <br>
+        <label for="Jueves">Jueves: </label>
+        <input type="time" id="Jueves" name="Jueves">
+        <br>
+        <br>
+        <label for="Viernes">Viernes: </label>
+        <input type="time" id="Viernes" name="Viernes">
+        <br>
+        <br>
+        <label for="Sábado">Sábado: </label>
+        <input type="time" id="Sábado" name="Sábado">
+        <br>
+        <br>
+        <label for="Domingo">Domingo: </label>
+        <input type="time" id="Domingo" name="Domingo">
+        <br>
+        <br>
+        <input type="datetime-local" name="fecha" value="2017-12-31T20:30">
+<input type="number" name="horas" value="5" />
+<input type="button" value="CAMBIAR HORA" onclick="sumar_horas()" />
+<br>
+<input type="text" name="log" />
+<br>
+        <button onclick="guardar()">Guardar</button>
+    </form>
+
 </body>
-</html> 
+<script>
+function sumar_horas()
+{
+  var fecha = document.getElementsByName("fecha")[0].value;
+  var horas = document.getElementsByName("horas")[0].value;
+ 
+ 
+fecha = new Date(fecha);
+fecha.setHours(fecha.getHours()+horas);
+fecha =  fecha.toISOString();
+var fecha_date = fecha.split('T');
+var fecha_time = fecha_date[1].split('.');
+var fecha_time = fecha_date[1].split(':');
+fecha_date = fecha_date[0];
+
+fecha = fecha_date+' '+fecha_time[0]+':'+fecha_time[1];
+ 
+ 
+document.getElementsByName("log")[0].value = fecha;
+}
+</script>
+</html>
